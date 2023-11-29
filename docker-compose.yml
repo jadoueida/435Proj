@@ -1,0 +1,30 @@
+version: '3'
+
+services:
+  customers:
+    build:
+      context: ./  # Set the context to the root directory of the project
+      dockerfile: ./customers/Dockerfile
+    ports:
+      - "8000:8000"
+
+  inventory:
+    build:
+      context: ./  # Set the context to the root directory of the project
+      dockerfile: ./inventory/Dockerfile
+    ports:
+      - "8001:8001"
+
+  sales:
+    build:
+      context: ./  # Set the context to the root directory of the project
+      dockerfile: ./sales/Dockerfile
+    ports:
+      - "8002:8002"
+
+
+
+
+
+
+
