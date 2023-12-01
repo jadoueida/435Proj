@@ -1,26 +1,30 @@
-version: '3'
+version: "3"
 
 services:
-  customers:
-    build:
-      context: ./  # Set the context to the root directory of the project
-      dockerfile: ./customers/Dockerfile
+  web_customer:
+    build: .
+    command: ["python", "manage.py", "runserver", "0.0.0.0:8000"]
     ports:
       - "8000:8000"
+    volumes:
+      - .:/app
 
-  inventory:
-    build:
-      context: ./  # Set the context to the root directory of the project
-      dockerfile: ./inventory/Dockerfile
+  web_goods:
+    build: .
+    command: ["python", "manage.py", "runserver", "0.0.0.0:8001"]
     ports:
       - "8001:8001"
+    volumes:
+      - .:/app
 
-  sales:
-    build:
-      context: ./  # Set the context to the root directory of the project
-      dockerfile: ./sales/Dockerfile
+  web_sales:
+    build: .
+    command: ["python", "manage.py", "runserver", "0.0.0.0:8002"]
     ports:
       - "8002:8002"
+    volumes:
+      - .:/app
+
 
 
 
