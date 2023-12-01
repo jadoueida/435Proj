@@ -10,7 +10,9 @@ Welcome to 435PROJ's documentation!
    :maxdepth: 3
    :caption: Contents:
 
-
+   customer_views
+   inventory_views
+   sales_views
 
 Indices and tables
 ==================
